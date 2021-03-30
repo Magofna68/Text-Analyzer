@@ -13,8 +13,10 @@ function wordCounter(text) {
 }
 
 function numberOfOccurencesInText(word, text) {
+  debugger;
   if (text.trim().length === 0) {
     return 0;
+
   }
   const wordArray = text.split(" ");
   let wordCount = 0;
@@ -33,6 +35,7 @@ $(document).ready(function () {
   $("form#word-counter").submit(function (event) {
     event.preventDefault();
     const passage = $("#text-passage").val();
+    console.log("This is what the user input for passage: " + passage)
     const word = $("#word").val();
     const wordCount = wordCounter(passage);
     const occurencesOfWord = numberOfOccurencesInText
